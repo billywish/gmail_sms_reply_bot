@@ -41,31 +41,6 @@ CUSTOMER_CONTEXT="Insert relevant details about your customer, website, FAQs, po
 
 ---
 
-## Usage
-
-### `draft_save_notify`
-
-Generates a new draft (or uses an existing draft), saves it to the database, and sends an SMS with the draft and instructions.
-
-```python
-draft_save_notify(
-    recipient="user@example.com",
-    subject="Inquiry about service",
-    received_content="Original email body here",
-    message_id="<original-email-message-id>"
-)
-```
-
-### `redraft_save_notify`
-
-Refines an existing draft based on user feedback, saves it as a new pending draft, and sends an updated SMS notification.
-
-```python
-redraft_save_notify(email_record, feedback="Please clarify the refund policy.")
-```
-
----
-
 ## Prompt Customization with Customer Context
 
 Your OpenAI prompts now include `CUSTOMER_CONTEXT` to give the AI relevant background information about the customer’s business, FAQs, or policies. This helps produce replies that are more accurate and aligned with customer specifics.
