@@ -59,7 +59,7 @@ Thank you for reaching out. Our refund policy allows returns within 30 days...
 
 ## Notes
 
-- The system expects SMS replies in Y/N/R format with optional feedback after an 'R'.
+- The system expects SMS replies in the format: `Y`, `N`, or `R` followed by the draft ID (e.g., `Y 123`), with optional feedback after an `R` (e.g., `R 123 Please clarify the refund policy.`).
 - The email threading is maintained by passing and storing the original email’s message ID.
 
 ---
@@ -171,10 +171,10 @@ You should see logs confirming the bot is running and polling.
 
 - The bot polls emails every `POLL_INTERVAL_SECONDS` (default 60 seconds).
 - Drafts replies using OpenAI and sends SMS notifications.
-- Reply via SMS with:
-  - `Y` (Yes) to send
-  - `N` (No) to discard
-  - `R` (Reject + feedback) to request revision
+Reply via SMS with the following format:
+  - `Y <draft_id>` (Yes) to send  
+  - `N <draft_id>` (No) to discard  
+  - `R <draft_id> <optional feedback>` (Reject + feedback) to request revision  
 
 ---
 
